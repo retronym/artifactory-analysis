@@ -1,0 +1,65 @@
+⚡ time curl -v -L 'https://oss.sonatype.org/service/local/repositories/releases/content/org/scala-lang/scala-library/2.12.4/scala-library-2.12.4.jar' -o /tmp/test.jar
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying 107.23.166.173...
+* TCP_NODELAY set
+* Connected to oss.sonatype.org (107.23.166.173) port 443 (#0)
+* ALPN, offering h2
+* ALPN, offering http/1.1
+* Cipher selection: ALL:!EXPORT:!EXPORT40:!EXPORT56:!aNULL:!LOW:!RC4:@STRENGTH
+* successfully set certificate verify locations:
+*   CAfile: /etc/ssl/cert.pem
+  CApath: none
+* TLSv1.2 (OUT), TLS handshake, Client hello (1):
+} [512 bytes data]
+* TLSv1.2 (IN), TLS handshake, Server hello (2):
+{ [89 bytes data]
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0* TLSv1.2 (IN), TLS handshake, Certificate (11):
+{ [4758 bytes data]
+* TLSv1.2 (IN), TLS handshake, Server key exchange (12):
+{ [333 bytes data]
+* TLSv1.2 (IN), TLS handshake, Server finished (14):
+{ [4 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Client key exchange (16):
+} [70 bytes data]
+* TLSv1.2 (OUT), TLS change cipher, Client hello (1):
+} [1 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Finished (20):
+} [16 bytes data]
+* TLSv1.2 (IN), TLS change cipher, Client hello (1):
+{ [1 bytes data]
+* TLSv1.2 (IN), TLS handshake, Finished (20):
+{ [16 bytes data]
+* SSL connection using TLSv1.2 / ECDHE-RSA-AES128-GCM-SHA256
+* ALPN, server did not agree to a protocol
+* Server certificate:
+*  subject: OU=Domain Control Validated; CN=*.sonatype.org
+*  start date: Sep 18 15:02:41 2015 GMT
+*  expire date: Sep 24 18:39:12 2018 GMT
+*  subjectAltName: host "oss.sonatype.org" matched cert's "*.sonatype.org"
+*  issuer: C=US; ST=Arizona; L=Scottsdale; O=GoDaddy.com, Inc.; OU=http://certs.godaddy.com/repository/; CN=Go Daddy Secure Certificate Authority - G2
+*  SSL certificate verify ok.
+> GET /service/local/repositories/releases/content/org/scala-lang/scala-library/2.12.4/scala-library-2.12.4.jar HTTP/1.1
+> Host: oss.sonatype.org
+> User-Agent: curl/7.54.0
+> Accept: */*
+>
+< HTTP/1.1 200 OK
+< Content-Type: application/java-archive
+< Date: Mon, 26 Mar 2018 06:12:16 GMT
+< ETag: "{SHA1{7663f74ef944453c86cc7e6597ed33e9281f6412}}"
+< Last-Modified: Wed, 11 Oct 2017 07:07:10 GMT
+< Server: nginx
+< Vary: Accept-Charset, Accept-Encoding, Accept-Language, Accept
+< X-Content-Type-Options: nosniff
+< X-Frame-Options: SAMEORIGIN
+< Content-Length: 5247152
+< Connection: keep-alive
+<
+{ [7770 bytes data]
+100 5124k  100 5124k    0     0   408k      0  0:00:12  0:00:12 --:--:--  594k
+* Connection #0 to host oss.sonatype.org left intact
+
+real	0m12.571s
+user	0m0.141s
+sys	0m0.078s
